@@ -9,22 +9,22 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#060d1f;--bg2:#0a1628;--bg3:#0f1f38;
-  --blue:#1e40af;--blue2:#3b82f6;--blue3:#93c5fd;
-  --am:#f59e0b;--am2:#fbbf24;--am3:#fde68a;
-  --w:#f8fafc;--dim:rgba(248,250,252,.52);
-  --faint:rgba(248,250,252,.07);--rule:rgba(59,130,246,.2);--rule2:rgba(245,158,11,.22);
+  --bg:#fbf9f5;--bg2:#f3efe6;--bg3:#ece5d6;
+  --blue:#1e40af;--blue2:#1d4ed8;--blue3:#3b5fc4;
+  --am:#b5790a;--am2:#9c6508;--am3:#7a4f08;
+  --w:#1a1d23;--dim:rgba(26,29,35,.68);
+  --faint:rgba(26,29,35,.08);--rule:rgba(29,78,216,.22);--rule2:rgba(181,121,10,.28);
 }
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--w);line-height:1.65;overflow-x:hidden}
-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(6,13,31,.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;padding:0 3rem;height:56px}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(251,249,245,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;padding:0 3rem;height:56px}
 .nl{font-family:'JetBrains Mono',monospace;color:var(--am);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase}
 .nlinks{display:flex;gap:1.5rem;list-style:none}
 .nlinks a{color:var(--dim);text-decoration:none;font-size:.64rem;letter-spacing:.07em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;transition:color .2s}
 .nlinks a:hover{color:var(--am)}
 #hero{min-height:100vh;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:90px 2rem 4rem;position:relative;overflow:hidden;text-align:center}
-.circuit{position:absolute;inset:0;opacity:.06;pointer-events:none}
-.hglow{position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 20%,rgba(59,130,246,.13) 0%,transparent 70%);pointer-events:none}
+.circuit{position:absolute;inset:0;opacity:.08;pointer-events:none}
+.hglow{position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 20%,rgba(29,78,216,.08) 0%,transparent 70%);pointer-events:none}
 .hl{display:flex;flex-direction:column;align-items:center;justify-content:center;max-width:680px;position:relative;z-index:2}
 .ey{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.22em;color:var(--blue2);text-transform:uppercase;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:center;gap:.75rem}
 .ey::before,.ey::after{content:'';width:22px;height:1px;background:var(--blue2)}
@@ -38,7 +38,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(6,13,31,.94)
 .btn.p{background:var(--am);border-color:var(--am);color:var(--bg);font-weight:700}
 .btn.p:hover{background:var(--am2)}
 .hr{display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;z-index:2;gap:1.25rem;margin-bottom:2.5rem}
-.frame{width:255px;height:318px;border:3px solid var(--am);overflow:hidden;position:relative;flex-shrink:0;background:#1a2332;box-shadow:0 0 0 1px rgba(245,158,11,.15),0 20px 60px rgba(0,0,0,.5)}
+.frame{width:255px;height:318px;border:3px solid var(--am);overflow:hidden;position:relative;flex-shrink:0;background:#ece5d6;box-shadow:0 0 0 1px rgba(181,121,10,.18),0 16px 40px rgba(26,29,35,.18)}
 .frame img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
 .name-caption{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--am);text-align:center;letter-spacing:.04em}
 .stats{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1px;background:var(--faint);width:100%;max-width:560px}
@@ -111,7 +111,7 @@ section{padding:6rem 5rem}
 .statitem{border:1px solid var(--rule2);padding:1rem 1.1rem;background:rgba(245,158,11,.04)}
 .statn{font-family:'DM Serif Display',serif;font-size:1.7rem;color:var(--am);display:block;line-height:1}
 .statl{font-size:.7rem;color:var(--dim);margin-top:.3rem;line-height:1.4}
-.statsrc{font-size:.58rem;color:rgba(248,250,252,.3);font-family:'JetBrains Mono',monospace;margin-top:.4rem}
+.statsrc{font-size:.58rem;color:rgba(26,29,35,.4);font-family:'JetBrains Mono',monospace;margin-top:.4rem}
 .pins{border:1px solid var(--rule);padding:1.35rem;margin-bottom:1rem;background:rgba(59,130,246,.03);transition:border-color .2s}
 .pins:hover{border-color:var(--blue2)}
 .pinl{font-family:'JetBrains Mono',monospace;font-size:.54rem;letter-spacing:.12em;color:var(--am);text-transform:uppercase;margin-bottom:.5rem}
@@ -138,7 +138,7 @@ section{padding:6rem 5rem}
 #contact{background:var(--bg2);text-align:center;padding:6rem 3rem}
 .csub{color:var(--dim);max-width:440px;margin:.65rem auto 2.5rem;font-size:.91rem;line-height:1.78}
 .cacts{display:flex;justify-content:center;gap:.7rem;flex-wrap:wrap}
-footer{background:#030710;color:rgba(248,250,252,.18);text-align:center;padding:1.5rem;font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.09em}
+footer{background:#1a1d23;color:rgba(251,249,245,.4);text-align:center;padding:1.5rem;font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.09em}
 @media(max-width:900px){
   #hero{grid-template-columns:1fr}
   .hr{display:none}
@@ -640,7 +640,7 @@ footer{background:#030710;color:rgba(248,250,252,.18);text-align:center;padding:
         </div>
       </div>
       <p class="pdesc">MbaoMed was not assigned by a syllabus. It emerged from years of direct observation: clinic visits, community health work, conversations with patients and staff, all converging on a single diagnostic question: why do functioning hospitals keep losing patients to data chaos rather than a lack of medicine?</p>
-      <p class="pdesc" style="font-size:.79rem;color:rgba(248,250,252,.28);font-style:italic">Conceptualized with a research-first methodology and built with available tools including AI assistance for rapid prototyping, while maintaining full conceptual ownership and engineering direction.</p>
+      <p class="pdesc" style="font-size:.79rem;color:rgba(26,29,35,.4);font-style:italic">Conceptualized with a research-first methodology and built with available tools including AI assistance for rapid prototyping, while maintaining full conceptual ownership and engineering direction.</p>
       <div class="ptechs">
         <span class="ptag">Python</span><span class="ptag">C++</span><span class="ptag">Data Engineering</span><span class="ptag">Algorithm Design</span><span class="ptag">Healthcare IT</span><span class="ptag">OOP</span>
       </div>
