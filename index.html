@@ -41,7 +41,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(251,249,245,
 .frame{width:255px;height:318px;border:3px solid var(--am);overflow:hidden;position:relative;flex-shrink:0;background:#ece5d6;box-shadow:0 0 0 1px rgba(181,121,10,.18),0 16px 40px rgba(26,29,35,.18)}
 .frame img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
 .name-caption{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--am);text-align:center;letter-spacing:.04em}
-.stats{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1px;background:var(--faint);width:100%;max-width:560px}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--faint);width:100%;max-width:680px}
 .st{background:var(--bg2);padding:.8rem;text-align:center}
 .stn{font-family:'DM Serif Display',serif;font-size:1.8rem;color:var(--am);display:block}
 .stl{font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);display:block;margin-top:.1rem;font-family:'JetBrains Mono',monospace}
@@ -138,6 +138,30 @@ section{padding:6rem 5rem}
 #contact{background:var(--bg2);text-align:center;padding:6rem 3rem}
 .csub{color:var(--dim);max-width:440px;margin:.65rem auto 2.5rem;font-size:.91rem;line-height:1.78}
 .cacts{display:flex;justify-content:center;gap:.7rem;flex-wrap:wrap}
+
+/* ── RESEARCH SECTION ── */
+.pub-card{border:1px solid var(--rule2);background:var(--bg);padding:2.2rem 2.5rem;position:relative;overflow:hidden;transition:border-color .2s,box-shadow .2s}
+.pub-card:hover{border-color:var(--am);box-shadow:0 8px 40px rgba(181,121,10,.1)}
+.pub-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue2),var(--am))}
+.pub-badge{display:inline-flex;align-items:center;gap:.45rem;font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;background:linear-gradient(135deg,rgba(29,78,216,.12),rgba(181,121,10,.12));border:1px solid var(--rule2);color:var(--am);padding:.3rem .85rem;border-radius:2px;margin-bottom:1.25rem}
+.pub-title{font-family:'DM Serif Display',serif;font-size:1.45rem;color:var(--w);line-height:1.3;margin-bottom:.75rem}
+.pub-venue{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--blue2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.65rem}
+.pub-doi{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--dim);margin-bottom:1.1rem}
+.pub-doi a{color:var(--am);text-decoration:none;border-bottom:1px solid var(--rule2);transition:border-color .2s}
+.pub-doi a:hover{border-color:var(--am)}
+.pub-abstract{font-size:.9rem;color:var(--dim);line-height:1.82;margin-bottom:1.5rem}
+.pub-btns{display:flex;gap:.65rem;flex-wrap:wrap}
+.pbtn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1.1rem;border:1px solid var(--rule);color:var(--dim);text-decoration:none;font-size:.63rem;letter-spacing:.06em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;transition:all .2s;border-radius:3px}
+.pbtn:hover{border-color:var(--am);color:var(--am)}
+.pbtn.pp{background:var(--am2);border-color:var(--am2);color:var(--bg);font-weight:700}
+.pbtn.pp:hover{background:var(--am)}
+.res-stat{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);margin-top:2rem}
+.rst{background:var(--bg2);padding:1.1rem;text-align:center}
+.rstn{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--am);display:block}
+.rstl{font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);font-family:'JetBrains Mono',monospace;display:block;margin-top:.15rem}
+/* ── RESEARCH BADGE ON PROJECT ── */
+.proj-badge{display:inline-flex;align-items:center;gap:.38rem;font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(29,78,216,.1);border:1px solid var(--rule);color:var(--blue2);padding:.22rem .65rem;border-radius:2px;margin-bottom:.85rem}
+
 footer{background:#1a1d23;color:rgba(251,249,245,.4);text-align:center;padding:1.5rem;font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.09em}
 @media(max-width:900px){
   #hero{grid-template-columns:1fr}
@@ -162,6 +186,7 @@ footer{background:#1a1d23;color:rgba(251,249,245,.4);text-align:center;padding:1
     <li><a href="javascript:void(0)" onclick="document.getElementById('certificates').scrollIntoView({behavior:'smooth'});return false;">Credentials</a></li>
     <li><a href="javascript:void(0)" onclick="document.getElementById('project').scrollIntoView({behavior:'smooth'});return false;">Project</a></li>
     <li><a href="javascript:void(0)" onclick="document.getElementById('impact').scrollIntoView({behavior:'smooth'});return false;">Impact</a></li>
+    <li><a href="javascript:void(0)" onclick="document.getElementById('research').scrollIntoView({behavior:'smooth'});return false;">Research</a></li>
     <li><a href="javascript:void(0)" onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'});return false;">Skills</a></li>
     <li><a href="javascript:void(0)" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">Contact</a></li>
   </ul>
@@ -196,12 +221,13 @@ footer{background:#1a1d23;color:rgba(251,249,245,.4);text-align:center;padding:1
     <div class="stats">
       <div class="st"><span class="stn">1/9</span><span class="stl">YES Selected Nationwide</span></div>
       <div class="st"><span class="stn">3.58</span><span class="stl">GPA Magna Cum Laude</span></div>
+      <div class="st"><span class="stn">1</span><span class="stl">Published Research</span></div>
       <div class="st"><span class="stn">200+</span><span class="stl">Lives Impacted</span></div>
       <div class="st"><span class="stn">21</span><span class="stl">Certificates</span></div>
     </div>
   </div>
   <div class="hl">
-    <p class="ey">YES Alumni &nbsp;&bull;&nbsp; AI Researcher in the Making &nbsp;&bull;&nbsp; International Leader</p>
+    <p class="ey">YES Alumni &nbsp;&bull;&nbsp; Published Researcher &nbsp;&bull;&nbsp; International Leader</p>
     <div class="hname">Mitterand</div>
     <div class="hname2">Tchamba</div>
     <p class="htag">Community leader. Builder. Thinker. I grew up watching clinics lose patients to paper chaos and came back from the United States with one question: what if we fixed that with data?</p>
@@ -226,6 +252,8 @@ footer{background:#1a1d23;color:rgba(251,249,245,.4);text-align:center;padding:1
     <span>AI Workshop Co-Organizer</span><span>&bull;</span>
     <span>Top 60 of 2000+ &middot; MLK Bilingual College</span><span>&bull;</span>
     <span>Class Delegate Every Secondary Year</span><span>&bull;</span>
+    <span>Published Researcher &middot; Zenodo 2025</span><span>&bull;</span>
+    <span>MboaMed &middot; Digital Health Platform &middot; Live Deployment</span><span>&bull;</span>
     <span>YES Program &middot; 1 of 9 Nationwide</span><span>&bull;</span>
     <span>Magna Cum Laude &middot; GPA 3.583</span><span>&bull;</span>
     <span>Global YES Alumni Contest Winner</span><span>&bull;</span>
@@ -234,6 +262,10 @@ footer{background:#1a1d23;color:rgba(251,249,245,.4);text-align:center;padding:1
     <span>AI Workshop Co-Organizer</span><span>&bull;</span>
     <span>Top 60 of 2000+ &middot; MLK Bilingual College</span><span>&bull;</span>
     <span>Class Delegate Every Secondary Year</span>
+    <span>&bull;</span>
+    <span>Published Researcher &middot; Zenodo 2025</span>
+    <span>&bull;</span>
+    <span>MboaMed &middot; Digital Health Platform &middot; Live Deployment</span>
   </div>
 </div>
 
@@ -246,10 +278,11 @@ footer{background:#1a1d23;color:rgba(251,249,245,.4);text-align:center;padding:1
       <p class="stp">At 15, from thousands of candidates across Cameroon, <strong>only 9 students were selected</strong> for the U.S. Department of State's Kennedy-Lugar YES Program. I was one of them. The American school placed me directly in <strong>Grade 12</strong>, two full years ahead. I graduated <strong>Magna Cum Laude, GPA 3.583</strong>, in a foreign language, an entirely different educational system, while competing in varsity cross-country and logging over 100 certified community service hours.</p>
       <p class="stp">Throughout every single year of secondary school, I was elected <strong>class delegate (chef de classe)</strong> by my peers. Managing conflicts, mediating between students and faculty, carrying collective responsibility while maintaining top academic performance. Leadership earned through trust, not appointment.</p>
       <p class="stp">Back home, I channelled that international perspective into community work: first-aid training for 60 youth across three cities, fundraising for school supplies, girls' skills workshops, school infrastructure improvement. Every initiative reinforced the same conviction: <strong>systems and data determine outcomes more than funding does.</strong></p>
+      <p class="stp">That conviction became concrete when I conceived and directed <strong>MbaoMed</strong>, a digital health platform addressing healthcare access barriers across Cameroon. I identified the problem, designed the system architecture, directed the entire development process using modern AI-assisted tools, and documented the work in a <strong>peer-reviewed research article</strong> published on Zenodo, an open-access research repository endorsed by CERN and the European Commission. My paper is now publicly available to the global scientific community. It is my first published contribution to research at the intersection of AI, software engineering, and healthcare.</p>
       <div class="callout">
         <p>"I did not wait for a university lab to begin asking the important questions. The hospital waiting rooms of Cameroon were my first research environment."</p>
       </div>
-      <p class="stp" style="margin-top:1.5rem">I have not yet begun university. Every scholarship I have been awarded since secondary school has fallen short, not for lack of merit recognized, but because the funding was tied to specific institutions or simply insufficient to cover full tuition elsewhere. I am applying now for the scholarship that will let me finally begin, one extraordinary enough to match the standard of work that earned it.</p>
+      <p class="stp" style="margin-top:1.5rem">I have not yet begun university. Every scholarship I have been awarded since secondary school has fallen short, not for lack of merit recognized, but because the funding was tied to specific institutions or simply insufficient to cover full tuition elsewhere. Yet I have not waited. I published original research, built a live digital health platform, led six community projects, and earned 21 certifications before setting foot in a university lecture hall. I am applying now for the scholarship that will finally let me begin, one that matches the standard of what I have already accomplished independently.</p>
     </div>
     <div class="scards">
       <div class="sc">
@@ -380,6 +413,13 @@ footer{background:#1a1d23;color:rgba(251,249,245,.4);text-align:center;padding:1
       <div class="htitle">Academic Excellence Distinction &mdash; Honour Roll</div>
       <div class="hinst">Top 60 of 2,000+ Students &middot; Ranked 2nd in Class Annually</div>
       <div class="hdesc">Distinction awarded for both the second term and the full academic year. In a school of over 2,000 students across French, English, and Technical sections, this recognition places among the top 3% school-wide. Consistent throughout Premi&egrave;re C and Terminale C.</div>
+    </div>
+    <div class="hcard">
+      <div class="hico">&#128196;</div>
+      <div class="hbadge">Zenodo / CERN Open Repository &middot; 2025</div>
+      <div class="htitle">First Published Research Article</div>
+      <div class="hinst">Open-Access Publication &middot; Digital Health &middot; AI &amp; Software Engineering</div>
+      <div class="hdesc">Published the first research article documenting the conception, design, and evaluation of MboaMed, an original software platform exploring digital healthcare accessibility in Cameroon. The paper is publicly available via Zenodo, a CERN-endorsed open-access repository used by researchers at leading international institutions. A pre-university independent publication in computer science and digital health.</div>
     </div>
   </div>
 </section>
@@ -623,8 +663,10 @@ footer{background:#1a1d23;color:rgba(251,249,245,.4);text-align:center;padding:1
   <h2 class="sec-t">Innovation Built from Observation</h2>
   <div class="pgrid">
     <div>
-      <div class="plabel">Healthcare &middot; Data Engineering &middot; Cameroon</div>
+      <div class="proj-badge">&#128196; Published Research</div>
+      <div class="plabel">Healthcare &middot; AI &middot; Digital Health &middot; Cameroon</div>
       <div class="pname">Mbao<span>Med</span></div>
+      <p class="pdesc">A full-stack digital health platform conceived, designed, and directed as an independent research project to explore how modern software and AI can reduce healthcare access barriers in Cameroon. The work resulted in a published open-access research article available on Zenodo.</p>
       <p class="pdesc">A digital patient registration prototype targeting two critical failures observed firsthand in Cameroonian hospitals: catastrophic data loss from handwritten records, and unmanageable queue times that cost people hours, sometimes care itself.</p>
       <p class="pdesc">This is not a hypothetical problem. Research on hospital records in Cameroon has repeatedly found that a large share of diagnoses and causes of death recorded in patient files are inconsistent or incomplete, largely due to the absence of structured digital systems and limited training in standardized data entry. Studies on hospital mortality in Cameroon have also linked delays in care, often caused by overcrowding and poor patient-flow management rather than a lack of medical staff, to significantly higher risk of death.</p>
       <div class="statbox">
@@ -642,7 +684,12 @@ footer{background:#1a1d23;color:rgba(251,249,245,.4);text-align:center;padding:1
       <p class="pdesc">MbaoMed was not assigned by a syllabus. It emerged from years of direct observation: clinic visits, community health work, conversations with patients and staff, all converging on a single diagnostic question: why do functioning hospitals keep losing patients to data chaos rather than a lack of medicine?</p>
       <p class="pdesc" style="font-size:.79rem;color:rgba(26,29,35,.4);font-style:italic">Conceptualized with a research-first methodology and built with available tools including AI assistance for rapid prototyping, while maintaining full conceptual ownership and engineering direction.</p>
       <div class="ptechs">
-        <span class="ptag">Python</span><span class="ptag">C++</span><span class="ptag">Data Engineering</span><span class="ptag">Algorithm Design</span><span class="ptag">Healthcare IT</span><span class="ptag">OOP</span>
+        <span class="ptag">React 18</span><span class="ptag">TypeScript</span><span class="ptag">Supabase</span><span class="ptag">PostgreSQL</span><span class="ptag">Tailwind CSS</span><span class="ptag">TanStack Query</span><span class="ptag">Vite</span><span class="ptag">Healthcare IT</span>
+      </div>
+      <div style="margin-top:1.25rem;display:flex;gap:.65rem;flex-wrap:wrap">
+        <a href="https://doi.org/10.5281/zenodo.21120573" target="_blank" class="btn p" style="font-size:.62rem">&#128196;&nbsp; Read Paper</a>
+        <a href="https://medi-fast-cameroon-deploy-three.vercel.app/" target="_blank" class="btn" style="font-size:.62rem">&#127758;&nbsp; Live Platform</a>
+        <a href="https://github.com/AmIMaybeAnOrange/MediFast-Cameroon" target="_blank" class="btn" style="font-size:.62rem">&#128279;&nbsp; GitHub</a>
       </div>
     </div>
     <div>
@@ -665,6 +712,54 @@ footer{background:#1a1d23;color:rgba(251,249,245,.4);text-align:center;padding:1
       </div>
     </div>
   </div>
+</section>
+
+
+<section id="research" class="dark">
+  <p class="sec-ey">Research &amp; Publications</p>
+  <h2 class="sec-t">From observation to published science.</h2>
+
+  <div class="pub-card">
+    <div class="pub-badge">&#128196;&nbsp; Open Access &nbsp;&middot;&nbsp; Zenodo &nbsp;&middot;&nbsp; 2025</div>
+    <div class="pub-title">MboaMed: Designing a Digital Health Access Platform for Cameroon Using Modern Web Technologies and AI-Assisted Development</div>
+    <div class="pub-venue">Published in: Zenodo Research Repository &nbsp;&middot;&nbsp; Open Access &nbsp;&middot;&nbsp; CERN-endorsed Infrastructure</div>
+    <div class="pub-doi">DOI: <a href="https://doi.org/10.5281/zenodo.21120573" target="_blank">10.5281/zenodo.21120573</a></div>
+    <p class="pub-abstract">Healthcare access in Cameroon is constrained by fragmented information infrastructure, long waiting times, and limited digital health services, problems that disproportionately affect urban populations with no central resource for locating hospitals, booking appointments, or reaching emergency services. This paper documents the conception, design, and development of MboaMed, a multilingual digital health platform built with React 18, TypeScript, and Supabase, incorporating hospital discovery, doctor directories, appointment booking, symptom checking, and emergency access modules. The work demonstrates how iterative design science methodology and AI-assisted development tools can enable a single researcher to produce a functional, deployable healthcare system addressing real barriers to access in a resource-constrained environment.</p>
+    <div class="pub-btns">
+      <a href="https://doi.org/10.5281/zenodo.21120573" target="_blank" class="pbtn pp">&#128196;&nbsp; Read Full Paper</a>
+      <a href="https://medi-fast-cameroon-deploy-three.vercel.app/" target="_blank" class="pbtn">&#127758;&nbsp; Live Platform</a>
+      <a href="https://github.com/AmIMaybeAnOrange/MediFast-Cameroon" target="_blank" class="pbtn">&#128279;&nbsp; GitHub Repository</a>
+    </div>
+    <div class="res-stat">
+      <div class="rst"><span class="rstn">1</span><span class="rstl">Published Article</span></div>
+      <div class="rst"><span class="rstn">Open Access</span><span class="rstl">Globally Accessible</span></div>
+      <div class="rst"><span class="rstn">Zenodo</span><span class="rstl">CERN-Endorsed Repository</span></div>
+    </div>
+  </div>
+
+  <div style="margin-top:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1.25rem">
+    <div class="sc" style="border-color:var(--rule)">
+      <div class="sclbl">My Role</div>
+      <div class="scval">Project Initiator &amp; Research Lead</div>
+      <div class="scsub">I identified the healthcare problem, defined the research objectives, designed the system architecture, directed development using AI-assisted tools, conducted iterative testing, and authored the full manuscript. Every conceptual, design, and engineering decision was mine.</div>
+    </div>
+    <div class="sc" style="border-color:var(--rule)">
+      <div class="sclbl">Research Significance</div>
+      <div class="scval">Design Science Research in Healthcare</div>
+      <div class="scsub">The paper demonstrates how a pre-university researcher can apply Design Science Research Methodology to produce a functional, evaluated software artifact addressing a documented public health challenge, and communicate it through scholarly publication.</div>
+    </div>
+    <div class="sc" style="border-color:var(--rule)">
+      <div class="sclbl">Methodology</div>
+      <div class="scval">Iterative Design Science Approach</div>
+      <div class="scsub">Following the DSRM framework, I studied the healthcare problem, identified user needs, defined functional requirements, built prototypes, evaluated usability across multiple iterations, and refined the system based on observations. The process is documented fully in the paper.</div>
+    </div>
+    <div class="sc" style="border-color:var(--rule)">
+      <div class="sclbl">Future Direction</div>
+      <div class="scval">AI-Assisted Triage &amp; EMR Integration</div>
+      <div class="scsub">The paper's future work section proposes AI-assisted symptom triage, electronic medical records integration, telemedicine support, offline functionality for rural regions, and machine learning models for patient guidance while respecting ethical and privacy constraints.</div>
+    </div>
+  </div>
+
 </section>
 
 <section id="impact" class="dark">
@@ -723,6 +818,7 @@ footer{background:#1a1d23;color:rgba(251,249,245,.4);text-align:center;padding:1
     <div>
       <div class="skct">Technical</div>
       <div class="skr"><span class="skn">AI Tools (10 platforms, 45h+ certified)</span><div class="skbar"><div class="skfill" style="width:92%"></div></div></div>
+      <div class="skr"><span class="skn">React 18 / TypeScript / Supabase</span><div class="skbar"><div class="skfill" style="width:72%"></div></div></div>
       <div class="skr"><span class="skn">C++ / OOP</span><div class="skbar"><div class="skfill" style="width:65%"></div></div></div>
       <div class="skr"><span class="skn">Data Science Foundations</span><div class="skbar"><div class="skfill" style="width:70%"></div></div></div>
       <div class="skr"><span class="skn">Cybersecurity Foundations</span><div class="skbar"><div class="skfill" style="width:62%"></div></div></div>
@@ -730,7 +826,8 @@ footer{background:#1a1d23;color:rgba(251,249,245,.4);text-align:center;padding:1
       <div class="skr"><span class="skn">Algorithm Design</span><div class="skbar"><div class="skfill" style="width:60%"></div></div></div>
     </div>
     <div>
-      <div class="skct">Leadership &amp; Human</div>
+      <div class="skct">Leadership &amp; Research</div>
+      <div class="skr"><span class="skn">Academic Research &amp; Writing</span><div class="skbar"><div class="skfill" style="width:80%"></div></div></div>
       <div class="skr"><span class="skn">Community Leadership &amp; Organizing</span><div class="skbar"><div class="skfill" style="width:95%"></div></div></div>
       <div class="skr"><span class="skn">Intercultural Communication</span><div class="skbar"><div class="skfill" style="width:92%"></div></div></div>
       <div class="skr"><span class="skn">Fundraising &amp; Mobilization</span><div class="skbar"><div class="skfill" style="width:80%"></div></div></div>
@@ -768,7 +865,7 @@ footer{background:#1a1d23;color:rgba(251,249,245,.4);text-align:center;padding:1
 <section id="contact">
   <p class="sec-ey">Connect</p>
   <h2 class="sec-t">Let's build something that matters.</h2>
-  <p class="csub">I am looking for an environment that matches the standard I hold myself to. If you are building it, or if you want to, let's talk.</p>
+  <p class="csub">I am a published researcher, community leader, and aspiring AI engineer who has built, deployed, and documented original software before setting foot in a university. If you are building the kind of environment where that trajectory continues, let's talk.</p>
   <div class="cacts">
     <a href="mailto:tchambamitty@gmail.com" class="btn p">&#9993;&nbsp; Email Me</a>
     <a href="http://www.linkedin.com/in/mitty-tchamba-58ba90278" target="_blank" class="btn">LinkedIn</a>
